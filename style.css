@@ -1,65 +1,75 @@
+/* إعدادات عامة */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     background-color: #f4f4f4;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* الهيدر */
 .banner {
     width: 100%;
-    height: auto;
+    max-height: 300px;
+    object-fit: cover;
 }
 
 .profile {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
     margin-top: -50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile-img {
-    width: 120px;
+.logo {
+    width: 100px;
     border-radius: 50%;
-    border: 4px solid white;
 }
 
+/* زر الاشتراك */
 .subscribe-btn {
     background-color: red;
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
-.videos-section {
-    background: black;
-    color: white;
-    padding: 10px;
+/* قسم الفيديوهات */
+.videos {
     margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background: white;
     border-radius: 10px;
-    width: 90%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.videos-container {
+#videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* قسم الدعم */
+.support {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 20px;
 }
 
-.video-item {
-    width: 250px;
-    border-radius: 10px;
-    overflow: hidden;
+.support img {
+    width: 100px;
+    height: auto;
 }
 
-footer {
-    margin-top: 20px;
-}
-
-footer img {
-    width: 50px;
-    margin: 10px;
+/* إزالة الشريط الأحمر */
+.subscribe-btn:after {
+    content: none;
 }
