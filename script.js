@@ -2,8 +2,6 @@ const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';
 const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  
 const maxResults = 6;
 const videoContainer = document.getElementById('video-container');
-const commentsContainer = document.getElementById('comments-container');
-const commentInput = document.getElementById('comment-input');
 
 async function fetchLatestVideos() {
     try {
@@ -25,19 +23,6 @@ async function fetchLatestVideos() {
     } catch (error) {
         console.error('خطأ في جلب الفيديوهات:', error);
     }
-}
-
-// نظام التعليقات المحلي
-function addComment() {
-    const commentText = commentInput.value.trim();
-    if (commentText === "") return;
-
-    const commentDiv = document.createElement('div');
-    commentDiv.classList.add('comment');
-    commentDiv.textContent = commentText;
-
-    commentsContainer.appendChild(commentDiv);
-    commentInput.value = "";  
 }
 
 // تحميل الفيديوهات عند فتح الموقع
