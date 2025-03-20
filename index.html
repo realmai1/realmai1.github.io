@@ -10,46 +10,45 @@
             text-align: center;
             background-color: #f0f0f0;
         }
-        .banner {
-            width: 100%;
-            max-height: 300px;
-        }
-        .profile {
-            width: 150px;
-            border-radius: 50%;
-            margin-top: -75px;
-        }
         .container {
-            background: white;
-            width: 90%;
-            max-width: 600px;
-            margin: auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .button {
-            display: block;
-            padding: 10px;
-            margin: 10px auto;
-            width: 80%;
-            background: red;
+        .banner {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .profile {
+            width: 100px;
+            border-radius: 50%;
+            margin-top: -50px;
+            border: 5px solid white;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
         }
+        .youtube { background: red; }
+        .paypal { background: #0070ba; }
+        .email { background: #ea4335; }
     </style>
 </head>
 <body>
-    <img class="banner" src="banner.jpg" alt="Realm AI Banner">
     <div class="container">
-        <img class="profile" src="profile.jpg" alt="Realm AI Logo">
+        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
+        <img src="profile.jpg" alt="Realm AI Profile" class="profile">
         <h1>Realm AI</h1>
-        <a class="button" href="https://www.youtube.com/@Realm-AI1/shorts" target="_blank">شاهد القناة على يوتيوب</a>
-        <a class="button" href="mailto:ahmedzz6f7@gmail.com">تواصل معي عبر الإيميل</a>
-        <a class="button" href="https://www.paypal.com/paypalme/jztejtjkz" target="_blank">ادعمني عبر PayPal</a>
-        <a class="button" href="https://www.buymeacoffee.com/realmai" target="_blank">ادعمني عبر Buy Me A Coffee</a>
+        <a href="https://www.youtube.com/@Realm-AI1/shorts" class="btn youtube">مشاهدة القناة على يوتيوب</a>
+        <a href="https://www.paypal.com/paypalme/jztejtjkz" class="btn paypal">ادعمني عبر PayPal</a>
+        <a href="mailto:ahmedzz6f7@gmail.com" class="btn email">تواصل معي عبر البريد</a>
     </div>
 </body>
 </html>
