@@ -1,6 +1,6 @@
-const API_KEY = "AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8";
-const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';
-const maxResults = 6; // زيادة عدد الفيديوهات إلى 6
+const apiKey = 'AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8';  // 🔹 استبدلها بمفتاح API الخاص بك
+const channelId = 'UCpypz4F50vF1Gx4HgiGE2kg';  // 🔹 استبدلها بـ ID قناتك
+const maxResults = 4;
 const videoContainer = document.getElementById('video-container');
 
 async function fetchLatestVideos() {
@@ -8,11 +8,12 @@ async function fetchLatestVideos() {
         const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
         const data = await response.json();
 
-        videoContainer.innerHTML = ""; // مسح أي فيديوهات قديمة
+        videoContainer.innerHTML = "";  // مسح أي فيديوهات قديمة
 
         data.items.forEach(item => {
             if (item.id.videoId) {
                 const videoFrame = document.createElement('iframe');
+                videoFrame.classList.add('video');
                 videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
                 videoFrame.allowFullscreen = true;
                 videoContainer.appendChild(videoFrame);
@@ -24,5 +25,5 @@ async function fetchLatestVideos() {
     }
 }
 
-// تحميل الفيديوهات عند فتح الموقع
+// استدعاء الدالة عند تحميل الصفحة
 fetchLatestVideos();
