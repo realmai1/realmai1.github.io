@@ -1,20 +1,20 @@
-const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';  
-const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  
+const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';  // 🔹 استبدلها بمفتاح API الذي حصلت عليه
+const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  // 🔹 استبدلها بـ ID قناتك
 const maxResults = 6;
 const videoContainer = document.getElementById('video-container');
 
 async function fetchLatestVideos() {
     try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
+        const response = await fetch(https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults});
         const data = await response.json();
 
-        videoContainer.innerHTML = "";  
+        videoContainer.innerHTML = "";  // مسح أي فيديوهات قديمة
 
         data.items.forEach(item => {
             if (item.id.videoId) {
                 const videoFrame = document.createElement('iframe');
                 videoFrame.classList.add('video');
-                videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
+                videoFrame.src = https://www.youtube.com/embed/${item.id.videoId};
                 videoFrame.allowFullscreen = true;
                 videoContainer.appendChild(videoFrame);
             }
@@ -25,5 +25,5 @@ async function fetchLatestVideos() {
     }
 }
 
-// تحميل الفيديوهات عند فتح الموقع
-fetchLatestVideos();
+// استدعاء الدالة عند تحميل الصفحة
+fetchLatestVideos(); 
