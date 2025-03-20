@@ -4,51 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realm AI</title>
+    <link rel="icon" type="image/x-icon" href="profile.ico">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .logo {
+            width: 150px;
+            border-radius: 50%;
         }
         .banner {
             width: 100%;
-            border-radius: 10px;
+            max-width: 800px;
+            margin-top: 20px;
         }
-        .profile {
-            width: 100px;
-            border-radius: 50%;
-            margin-top: -50px;
-            border: 5px solid white;
+        h1 {
+            font-size: 24px;
+            color: #333;
         }
         .btn {
             display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
+            background-color: red;
             color: white;
+            padding: 10px 20px;
             text-decoration: none;
+            font-size: 18px;
             border-radius: 5px;
+            margin-top: 20px;
         }
-        .youtube { background: red; }
-        .paypal { background: #0070ba; }
-        .email { background: #ea4335; }
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .social-links img {
+            width: 50px;
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
-        <img src="profile.jpg" alt="Realm AI Profile" class="profile">
+        <img src="logo.png" alt="Realm AI Logo" class="logo">
         <h1>Realm AI</h1>
-        <a href="https://www.youtube.com/@Realm-AI1/shorts" class="btn youtube">مشاهدة القناة على يوتيوب</a>
-        <a href="https://www.paypal.com/paypalme/jztejtjkz" class="btn paypal">ادعمني عبر PayPal</a>
-        <a href="mailto:ahmedzz6f7@gmail.com" class="btn email">تواصل معي عبر البريد</a>
+        <img src="banner.jpg" alt="Banner" class="banner">
+
+        <div>
+            <a class="btn" href="https://www.youtube.com/@Realm-AI1/shorts" target="_blank">شاهد القناة على يوتيوب</a>
+        </div>
+
+        <div class="social-links">
+            <a href="mailto:ahmedzz6f7@gmail.com">
+                <img src="email.png" alt="Email">
+            </a>
+            <a href="https://www.paypal.com/paypalme/jztejtjkz" target="_blank">
+                <img src="paypal.png" alt="PayPal">
+            </a>
+        </div>
     </div>
+
 </body>
 </html>
