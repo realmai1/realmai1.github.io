@@ -1,103 +1,132 @@
-/* قسم التعليقات */
-.comments-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+/* 🔹 تعميم التصميم */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    direction: rtl;
 }
 
-.comments-section h2 {
-    margin-bottom: 15px;
-    color: #222;
-    font-size: 22px;
+body {
+    background-color: #121212;
+    color: white;
     text-align: center;
-    border-bottom: 2px solid #ff4500;
-    padding-bottom: 10px;
 }
 
-#comment-input {
+/* 🔹 رأس الصفحة */
+header {
     width: 100%;
-    height: 100px;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    resize: none;
-    font-size: 16px;
-    transition: 0.3s;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#comment-input:focus {
-    border-color: #ff4500;
-    outline: none;
-    box-shadow: 0 0 8px rgba(255, 69, 0, 0.3);
-}
-
-/* زر إرسال التعليق */
-.comments-section button {
-    display: block;
+.banner {
     width: 100%;
-    margin-top: 12px;
-    padding: 12px;
+    height: auto;
+    border-bottom: 4px solid #ff4500;
+}
+
+/* 🔹 الملف الشخصي */
+.profile {
+    margin: 20px 0;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff4500;
+}
+
+h1 {
+    font-size: 28px;
+    margin-top: 10px;
+    color: #ff4500;
+}
+
+/* 🔹 زر الاشتراك */
+.subscribe-btn a {
+    display: inline-block;
     background: linear-gradient(45deg, #ff4500, #d13a00);
     color: white;
     font-size: 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
-.comments-section button:hover {
+.subscribe-btn a:hover {
     background: linear-gradient(45deg, #d13a00, #ff4500);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-/* عرض التعليقات */
-#comments-container {
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-    padding-right: 5px;
+/* 🔹 قسم الفيديوهات */
+.videos {
+    margin-top: 30px;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.2);
 }
 
-/* تصميم التعليق */
-.comment {
-    background: #f9f9f9;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    text-align: left;
-    font-size: 16px;
-    border-left: 4px solid #ff4500;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.videos h2 {
+    font-size: 24px;
+    color: #ff4500;
+    margin-bottom: 15px;
+}
+
+/* 🔹 عرض الفيديوهات */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.3);
+}
+
+/* 🔹 روابط التواصل */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links img {
+    width: 50px;
     transition: 0.3s;
 }
 
-.comment:hover {
-    background: #fff3f0;
-    transform: scale(1.02);
+.social-links img:hover {
+    transform: scale(1.2);
 }
 
-/* تحسين استجابة القسم للأجهزة الصغيرة */
+/* 🔹 تحسين الاستجابة للأجهزة الصغيرة */
 @media screen and (max-width: 768px) {
-    .comments-section {
-        padding: 15px;
+    h1 {
+        font-size: 22px;
     }
 
-    #comment-input {
-        height: 80px;
-        font-size: 14px;
-    }
-
-    .comments-section button {
+    .subscribe-btn a {
         font-size: 16px;
-        padding: 10px;
+        padding: 10px 20px;
     }
 
-    .comment {
-        font-size: 14px;
+    .videos h2 {
+        font-size: 20px;
+    }
+
+    .video-container iframe {
+        height: 180px;
     }
 }
