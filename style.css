@@ -1,9 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
 .banner {
@@ -11,25 +15,13 @@ body {
     height: auto;
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .profile {
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .profile-img {
     width: 120px;
-    height: 120px;
     border-radius: 50%;
-    border: 3px solid #ff0000;
 }
 
 .subscribe-btn a {
@@ -38,43 +30,29 @@ body {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
-    border-radius: 20px;
 }
 
-.videos {
-    margin-top: 20px;
+.videos h2 {
+    margin-bottom: 10px;
 }
 
 .video-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .video {
-    width: 45%;
-    height: 200px;
-    border: none;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    width: 300px;
+    height: 180px;
+    transition: transform 0.3s ease-in-out, z-index 0.3s;
+    border-radius: 8px;
 }
 
 .video:hover {
     transform: scale(1.2);
-    z-index: 2;
-    opacity: 1;
-}
-
-.video-container .video:not(:hover) {
-    opacity: 0.5;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links img {
-    width: 50px;
-    margin: 10px;
+    z-index: 10;
 }
