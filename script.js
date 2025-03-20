@@ -1,6 +1,6 @@
-const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';  // 🔹 استبدلها بمفتاح API الخاص بك
+const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';  // 🔹 استبدلها بمفتاح API الصحيح
 const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  // 🔹 استبدلها بـ ID قناتك
-const maxResults = 6;  // ⬅️ جلب 6 فيديوهات بدلاً من 4
+const maxResults = 6;  // 🔹 عدد الفيديوهات المطلوبة
 const videoContainer = document.getElementById('video-container');
 
 async function fetchLatestVideos() {
@@ -8,7 +8,7 @@ async function fetchLatestVideos() {
         const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
         const data = await response.json();
 
-        videoContainer.innerHTML = "";  // مسح الفيديوهات السابقة
+        videoContainer.innerHTML = "";  // مسح أي فيديوهات قديمة
 
         data.items.forEach(item => {
             if (item.id.videoId) {
