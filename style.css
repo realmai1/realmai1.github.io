@@ -2,62 +2,57 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
 
 .banner {
     width: 100%;
-    max-height: 200px;
+    height: auto;
 }
 
-.channel-info {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.profile {
+    margin: 20px 0;
 }
 
-.channel-logo {
-    width: 100px;
+.profile-img {
+    width: 120px;
     border-radius: 50%;
 }
 
-.subscribe-button {
-    background-color: red;
+.subscribe-btn a {
+    display: inline-block;
+    background: red;
     color: white;
-    border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    font-weight: bold;
 }
 
 .videos h2 {
-    background: black;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .video-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    padding: 20px;
+    gap: 15px;
 }
 
-.video-container iframe {
-    width: 320px;
+.video {
+    width: 300px;
     height: 180px;
-    border: none;
-    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, z-index 0.3s;
+    border-radius: 8px;
 }
 
-.donate img {
-    width: 50px;
-    margin: 10px;
+.video:hover {
+    transform: scale(1.2);
+    z-index: 10;
 }
