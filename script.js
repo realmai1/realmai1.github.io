@@ -1,6 +1,6 @@
-// ضع مفتاح API الجديد هنا
-const API_KEY = "AIzaSyAw-THig0bPAf997EYbrANA6Vjlk_Aj36s"; // استبدل بمفتاحك الجديد
-const CHANNEL_ID = "UC1h0oky2jplc41qdmmwrvdw"; // استبدل بمعرف قناتك على اليوتيوب
+// ضع مفتاح API الصحيح هنا
+const API_KEY = "AIzaSyAw-THig0bPAf997EYbrANA6Vjlk_Aj36s"; // استبدله بمفتاحك الجديد
+const CHANNEL_ID = "UC1h0oky2jplc41qdmmwrvdw"; // استبدله بمعرف قناتك على اليوتيوب
 const MAX_RESULTS = 6; // عدد الفيديوهات المراد جلبها
 
 async function fetchLatestVideos() {
@@ -15,7 +15,6 @@ async function fetchLatestVideos() {
         const data = await response.json();
         const videoContainer = document.getElementById("video-container");
 
-        // التحقق من وجود بيانات
         if (!data.items) {
             throw new Error("لم يتم العثور على فيديوهات. تأكد من إعدادات API.");
         }
@@ -27,7 +26,7 @@ async function fetchLatestVideos() {
                 const videoElement = document.createElement("div");
                 videoElement.classList.add("video");
                 videoElement.innerHTML = `
-                    <iframe width="360" height="202" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="160" height="90" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
                     <p>${item.snippet.title}</p>
                 `;
                 videoContainer.appendChild(videoElement);
