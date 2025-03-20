@@ -1,75 +1,63 @@
-/* إعدادات عامة */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     text-align: center;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-/* الهيدر */
 .banner {
     width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+    max-height: 200px;
 }
 
-.profile {
+.channel-info {
     background: white;
     padding: 20px;
+    margin: 20px auto;
+    width: 80%;
     border-radius: 10px;
-    display: inline-block;
-    margin-top: -50px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
+.channel-logo {
     width: 100px;
     border-radius: 50%;
 }
 
-/* زر الاشتراك */
-.subscribe-btn {
+.subscribe-button {
     background-color: red;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.videos h2 {
+    background: black;
+    color: white;
+    padding: 10px;
     border-radius: 5px;
 }
 
-/* قسم الفيديوهات */
-.videos {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 900px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-#videos-container {
+.video-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    padding: 20px;
 }
 
-/* قسم الدعم */
-.support {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.video-container iframe {
+    width: 320px;
+    height: 180px;
+    border: none;
+    border-radius: 10px;
 }
 
-.support img {
-    width: 100px;
-    height: auto;
-}
-
-/* إزالة الشريط الأحمر */
-.subscribe-btn:after {
-    content: none;
+.donate img {
+    width: 50px;
+    margin: 10px;
 }
