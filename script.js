@@ -1,5 +1,5 @@
 // ضع مفتاح API الصحيح هنا
-const API_KEY = "AIzaSyAw-THig0bPAf997EYbrANA6Vjlk_Aj36s"; // استبدله بمفتاحك الجديد
+const API_KEY = "AIzaSyB88v3OMVUsZcHAUKTbRiaPmBF84dqqYXo"; // استبدله بمفتاحك الجديد
 const CHANNEL_ID = "UC1h0oky2jplc41qdmmwrvdw"; // استبدله بمعرف قناتك على اليوتيوب
 const MAX_RESULTS = 6; // عدد الفيديوهات المراد جلبها
 
