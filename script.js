@@ -1,6 +1,6 @@
 const apiKey = 'AIzaSyB88v3OMVUsZcHAUKTbRiaPmBF84dqqYXo';  // 🔹 استبدلها بمفتاح API الصحيح
-const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  // 🔹 استبدلها بـ ID قناتك
-const maxResults = 6;  // 🔹 عدد الفيديوهات المطلوبة
+const channelId = 'UCpypz4F50vF1Gx4HgiGE2kg';  // 🔹 استبدلها بـ ID قناتك
+const maxResults = 4;
 const videoContainer = document.getElementById('video-container');
 
 async function fetchLatestVideos() {
