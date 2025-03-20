@@ -15,15 +15,18 @@
 
     <div class="container">
         <div class="profile">
-            <img src="logo.jpg" alt="Realm AI Logo" class="profile-pic">
+            <img src="logo.jpg" alt="Realm AI Logo" class="profile-img">
             <h1>Realm AI</h1>
-            <a href="https://www.youtube.com/@Realm-AI1" target="_blank" class="subscribe-btn">Subscribers 2K</a>
+        </div>
+
+        <div class="subscribe-btn">
+            <a href="https://www.youtube.com/@Realm-AI1" target="_blank">Subscribers 2K</a>
         </div>
 
         <div class="videos">
             <h2>Videos ➡ Realm AI</h2>
             <div class="video-container" id="video-container">
-                <!-- سيتم إدراج الفيديوهات هنا ديناميكيًا -->
+                <!-- سيتم إدراج الفيديوهات تلقائيًا هنا -->
             </div>
         </div>
 
@@ -33,42 +36,7 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", async function fetchLatestVideos() {
-            const apiKey = 'AIzaSyB88v3OMVUsZcHAUKTbRiaPmBF84dqqYXo';  // 🔹 استبدلها بمفتاح API الصحيح
-            const channelId = 'UCpypz4F50vF1Gx4HgiGE2kg';  // 🔹 استبدلها بـ ID القناة
-            const maxResults = 4;
-            const videoContainer = document.getElementById('video-container');
-
-            try {
-                const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&type=video&order=date&maxResults=${maxResults}`;
-                console.log("🔹 طلب API:", url);
-                
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(`❌ HTTP Error! Status: ${response.status}, Message: ${data.error?.message}`);
-                }
-
-                console.log("✅ البيانات المستلمة:", data);
-
-                videoContainer.innerHTML = "";
-                data.items.forEach(item => {
-                    if (item.id.videoId) {
-                        const videoFrame = document.createElement('iframe');
-                        videoFrame.classList.add('video');
-                        videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
-                        videoFrame.allowFullscreen = true;
-                        videoContainer.appendChild(videoFrame);
-                    }
-                });
-
-            } catch (error) {
-                console.error("⚠️ خطأ في جلب الفيديوهات:", error);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
