@@ -1,29 +1,42 @@
-const apiKey = 'AIzaSyAw-THig0bPAf997EYbrANA6Vjlk_Aj36s';  // 🔹 استبدلها بمفتاح API الصحيح
-const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  // 🔹 استبدلها بـ ID قناتك
-const maxResults = 6;  // 🔹 عدد الفيديوهات المطلوبة
-const videoContainer = document.getElementById('video-container');
+// ضع مفتاح API الجديد هنا
+const API_KEY = "AIzaSyAw-THig0bPAf997EYbrANA6Vjlk_Aj36s"; // استبدل بمفتاحك الجديد
+const CHANNEL_ID = "UC1h0oky2jplc41qdmmwrvdw"; // استبدل بمعرف قناتك على اليوتيوب
+const MAX_RESULTS = 6; // عدد الفيديوهات المراد جلبها
 
 async function fetchLatestVideos() {
-    try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
-        const data = await response.json();
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`;
 
-        videoContainer.innerHTML = "";  // مسح أي فيديوهات قديمة
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const videoContainer = document.getElementById("video-container");
+
+        // التحقق من وجود بيانات
+        if (!data.items) {
+            throw new Error("لم يتم العثور على فيديوهات. تأكد من إعدادات API.");
+        }
+
+        videoContainer.innerHTML = ""; // تفريغ المحتوى السابق
 
         data.items.forEach(item => {
             if (item.id.videoId) {
-                const videoFrame = document.createElement('iframe');
-                videoFrame.classList.add('video');
-                videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
-                videoFrame.allowFullscreen = true;
-                videoContainer.appendChild(videoFrame);
+                const videoElement = document.createElement("div");
+                videoElement.classList.add("video");
+                videoElement.innerHTML = `
+                    <iframe width="360" height="202" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                    <p>${item.snippet.title}</p>
+                `;
+                videoContainer.appendChild(videoElement);
             }
         });
-
     } catch (error) {
-        console.error('خطأ في جلب الفيديوهات:', error);
+        console.error("خطأ في جلب الفيديوهات:", error);
     }
 }
 
 // استدعاء الدالة عند تحميل الصفحة
-fetchLatestVideos();
+window.onload = fetchLatestVideos;
