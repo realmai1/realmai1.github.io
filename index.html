@@ -3,91 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realm AI</title>
-    <link rel="icon" href="profile.ico" type="image/x-icon">
+    <title>Realm AI - فيديوهات مباشرة</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
+            background-color: #121212;
+            color: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .logo {
-            width: 150px;
-            border-radius: 50%;
+        h1 {
+            color: #f1c40f;
         }
-        .banner {
-            width: 100%;
-            border-radius: 10px;
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 15px 0;
-            font-size: 18px;
-            color: white;
-            background-color: red;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .social-icons img {
-            width: 50px;
-            margin: 10px;
-        }
-        .video-section {
-            background-color: #ffeeee;
+        .video-box {
+            background: #222;
             padding: 15px;
-            border-radius: 15px;
-            display: inline-block;
-            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         }
-        .video-section img {
-            width: 100px;
-            border-radius: 5px;
-            margin: 5px;
-        }
-        .subscribe-btn {
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 14px;
+        iframe {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 560px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
-        <br>
-        <img src="logo.png" alt="Realm AI Logo" class="logo">
-        <h2>Realm AI</h2>
-        <a href="https://www.youtube.com/@Realm-AI1/shorts" class="btn">شاهد القناة على يوتيوب</a>
-        <br>
-        <div class="video-section">
-            <img src="email.png" alt="YouTube Icon" width="30"> Realm AI
-            <span class="subscribe-btn">Subscribe 2.1K</span>
-            <br>
-            <img src="45.jpg" alt="Video Thumbnail">
-            <img src="45.jpg" alt="Video Thumbnail">
-            <br>
-            <img src="45.jpg" alt="Video Thumbnail">
-            <img src="45.jpg" alt="Video Thumbnail">
+    <h1>Realm AI - أحدث الفيديوهات</h1>
+
+    <div class="video-container">
+        <div class="video-box">
+            <h2>الفيديو 1</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mwmTbwMZfcQ" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
         </div>
-        <br>
-        <div class="social-icons">
-            <a href="mailto:ahmedzz6f7@gmail.com"><img src="email.png" alt="Email"></a>
-            <a href="https://www.paypal.com/paypalme/jztejtjkz"><img src="paypal.png" alt="PayPal"></a>
+
+        <div class="video-box">
+            <h2>الفيديو 2</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yJv_LsQc-SU" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-box">
+            <h2>الفيديو 3</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/00zWAhDtR7U" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-box">
+            <h2>الفيديو 4</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1hgMq9kNQik" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
         </div>
     </div>
 </body>
