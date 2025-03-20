@@ -1,30 +1,28 @@
 const API_KEY = "AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8";
-const CHANNEL_ID = "UC1H0OKY2JPLC41QDMMWRVDW";
-const MAX_RESULTS = 4;
-const videosContainer = document.getElementById("videos-container");
+const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';
+const maxResults = 6; // زيادة عدد الفيديوهات إلى 6
+const videoContainer = document.getElementById('video-container');
 
-async function fetchVideos() {
+async function fetchLatestVideos() {
     try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`);
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
         const data = await response.json();
 
-        if (data.items) {
-            videosContainer.innerHTML = "";
-            data.items.forEach(item => {
-                if (item.id.videoId) {
-                    const videoElement = document.createElement("div");
-                    videoElement.classList.add("video-item");
-                    videoElement.innerHTML = `
-                        <iframe width="250" height="140" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
-                    `;
-                    videosContainer.appendChild(videoElement);
-                }
-            });
-        }
+        videoContainer.innerHTML = ""; // مسح أي فيديوهات قديمة
+
+        data.items.forEach(item => {
+            if (item.id.videoId) {
+                const videoFrame = document.createElement('iframe');
+                videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
+                videoFrame.allowFullscreen = true;
+                videoContainer.appendChild(videoFrame);
+            }
+        });
+
     } catch (error) {
-        console.error("Error fetching videos:", error);
+        console.error('خطأ في جلب الفيديوهات:', error);
     }
 }
 
-// استدعاء الدالة عند تحميل الصفحة
-window.onload = fetchVideos;
+// تحميل الفيديوهات عند فتح الموقع
+fetchLatestVideos();
