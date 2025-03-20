@@ -4,68 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realm AI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .videos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .video {
-            position: relative;
-            width: 48%;
-            overflow: hidden;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        .video iframe {
-            width: 100%;
-            height: 200px;
-            border-radius: 8px;
-        }
-        .video:hover {
-            transform: scale(1.2);
-            z-index: 10;
-        }
-        .video:hover ~ .video {
-            opacity: 0.5;
-        }
-        @media (max-width: 600px) {
-            .video {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <header>
+        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
+    </header>
+
     <div class="container">
-        <h2>Realm AI - فيديوهات</h2>
+        <div class="profile">
+            <img src="logo.jpg" alt="Realm AI Logo" class="profile-img">
+            <h1>Realm AI</h1>
+        </div>
+
+        <div class="subscribe-btn">
+            <a href="https://www.youtube.com/@Realm-AI1" target="_blank">Subscribe 2.1K</a>
+        </div>
+
         <div class="videos">
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/mwmTbwMZfcQ" allowfullscreen></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/yJv_LsQc-SU" allowfullscreen></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/00zWAhDtR7U" allowfullscreen></iframe>
-            </div>
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/1hgMq9kNQik" allowfullscreen></iframe>
+            <h2>Realm AI - فيديوهات</h2>
+            <div class="video-container">
+                <iframe class="video" src="https://www.youtube.com/embed/mwmTbwMZfcQ" allowfullscreen></iframe>
+                <iframe class="video" src="https://www.youtube.com/embed/yJv_LsQc-SU" allowfullscreen></iframe>
+                <iframe class="video" src="https://www.youtube.com/embed/00zWAhDtR7U" allowfullscreen></iframe>
+                <iframe class="video" src="https://www.youtube.com/embed/1hgMq9kNQik" allowfullscreen></iframe>
             </div>
         </div>
+
+        <div class="social-links">
+            <a href="mailto:your-email@gmail.com"><img src="gmail.png" alt="Gmail"></a>
+            <a href="https://www.paypal.com/paypalme/yourlink" target="_blank"><img src="paypal.png" alt="PayPal"></a>
+        </div>
     </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
