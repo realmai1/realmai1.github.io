@@ -24,7 +24,7 @@ async function fetchLatestVideos() {
                 }
             });
         } else {
-            videoContainer.innerHTML = "<p>⚠ لا توجد فيديوهات متاحة حالياً.</p>";
+            videoContainer.innerHTML = "<p>⚠ There are no videos available at the moment..</p>";
         }
 
     } catch (error) {
