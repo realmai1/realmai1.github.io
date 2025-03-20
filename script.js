@@ -1,4 +1,4 @@
-const apiKey = 'AIzaSyB88v3OMVUsZcHAUKTbRiaPmBF84dqqYXo';  // 🔹 استبدلها بمفتاح API الصحيح
+const apiKey = 'AIzaSyB88v3OMVUsZcHAUKTbRiaPmBF84dqqYXo';  // 🔹 استبدلها بمفتاح API الخاص بك
 const channelId = 'UCpypz4F50vF1Gx4HgiGE2kg';  // 🔹 استبدلها بـ ID قناتك
 const maxResults = 4;
 const videoContainer = document.getElementById('video-container');
