@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realm AI</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
 
@@ -19,14 +20,21 @@
         </div>
 
         <div class="subscribe-btn">
-            <a href="https://www.youtube.com/@Realm-AI1" target="_blank">Subscribe 2K</a>
+            <a href="https://www.youtube.com/@Realm-AI1" target="_blank">Subscribers 2K</a>
         </div>
 
         <div class="videos">
-            <h2>Realm AI - فيديوهات</h2>
-            <div id="video-container" class="video-container"></div>
+            <h2>Videos ➡ Realm AI</h2>
+            <div class="video-container" id="video-container">
                 <!-- سيتم تحميل الفيديوهات تلقائيًا هنا -->
             </div>
+        </div>
+
+        <div class="comments-section">
+            <h2>التعليقات</h2>
+            <div id="comments-container"></div>
+            <textarea id="comment-input" placeholder="اكتب تعليقك هنا..."></textarea>
+            <button onclick="addComment()">إرسال</button>
         </div>
 
         <div class="social-links">
@@ -36,6 +44,5 @@
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
