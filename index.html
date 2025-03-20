@@ -4,85 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realm AI</title>
-    <link rel="icon" href="profile.ico">
+    <link rel="icon" href="profile.ico" type="image/x-icon">
     <style>
         body {
-            text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            padding-top: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .profile img {
-            width: 120px;
+        .logo {
+            width: 150px;
             border-radius: 50%;
         }
-        .banner img {
+        .banner {
             width: 100%;
             border-radius: 10px;
         }
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: red;
+            margin: 15px 0;
+            font-size: 18px;
             color: white;
-            font-weight: bold;
-            text-decoration: none;
+            background-color: red;
+            border: none;
             border-radius: 5px;
-            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
         }
         .social-icons img {
-            width: 40px;
+            width: 50px;
             margin: 10px;
         }
-        .video-box {
-            background: #ffecec;
-            padding: 20px;
+        .video-section {
+            background-color: #ffeeee;
+            padding: 15px;
             border-radius: 15px;
-            width: 60%;
-            margin: auto;
-            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
         }
-        .video-box img {
-            width: 45%;
+        .video-section img {
+            width: 100px;
+            border-radius: 5px;
             margin: 5px;
-            border-radius: 10px;
         }
         .subscribe-btn {
-            background: red;
+            background-color: red;
             color: white;
-            font-weight: bold;
-            padding: 5px 15px;
-            border-radius: 15px;
-            position: absolute;
-            right: 10px;
-            top: 10px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile">
-            <img src="logo.png" alt="Realm AI">
-            <h2>Realm AI</h2>
-        </div>
-        <div class="banner">
-            <img src="banner.jpg" alt="Realm AI Banner">
-        </div>
-        <a class="btn" href="https://www.youtube.com/@Realm-AI1/shorts">شاهد القناة على يوتيوب</a>
-        <div class="video-box">
+        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
+        <br>
+        <img src="logo.png" alt="Realm AI Logo" class="logo">
+        <h2>Realm AI</h2>
+        <a href="https://www.youtube.com/@Realm-AI1/shorts" class="btn">شاهد القناة على يوتيوب</a>
+        <br>
+        <div class="video-section">
+            <img src="email.png" alt="YouTube Icon" width="30"> Realm AI
             <span class="subscribe-btn">Subscribe 2.1K</span>
-            <h3>Realm AI</h3>
-            <img src="video1.jpg" alt="Video 1">
-            <img src="video2.jpg" alt="Video 2">
-            <img src="video3.jpg" alt="Video 3">
-            <img src="video4.jpg" alt="Video 4">
+            <br>
+            <img src="45.jpg" alt="Video Thumbnail">
+            <img src="45.jpg" alt="Video Thumbnail">
+            <br>
+            <img src="45.jpg" alt="Video Thumbnail">
+            <img src="45.jpg" alt="Video Thumbnail">
         </div>
+        <br>
         <div class="social-icons">
-            <a href="mailto:ahmedzz6f7@gmail.com"><img src="gmail.png" alt="Gmail"></a>
+            <a href="mailto:ahmedzz6f7@gmail.com"><img src="email.png" alt="Email"></a>
             <a href="https://www.paypal.com/paypalme/jztejtjkz"><img src="paypal.png" alt="PayPal"></a>
         </div>
     </div>
