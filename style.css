@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff0000;
+}
+
+.subscribe-btn a {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.videos {
+    margin-top: 20px;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.video {
+    width: 45%;
+    height: 200px;
+    border: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.video:hover {
+    transform: scale(1.2);
+    z-index: 2;
+    opacity: 1;
+}
+
+.video-container .video:not(:hover) {
+    opacity: 0.5;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links img {
+    width: 50px;
+    margin: 10px;
+}
