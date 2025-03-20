@@ -4,107 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realm AI</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #111;
-            color: white;
-            margin: 0;
-            padding: 0;
+            background-color: #f0f0f0;
         }
         .banner {
             width: 100%;
-            height: auto;
+            max-height: 300px;
         }
-        .profile-section {
-            margin-top: -50px;
-        }
-        .profile-pic {
+        .profile {
             width: 150px;
             border-radius: 50%;
-            border: 3px solid white;
+            margin-top: -75px;
         }
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .youtube-box {
-            background: #222;
+        .container {
+            background: white;
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
             padding: 20px;
             border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .subscribe {
+        .button {
+            display: block;
+            padding: 10px;
+            margin: 10px auto;
+            width: 80%;
             background: red;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .videos {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        .videos img {
-            width: 45%;
-            border-radius: 5px;
-            margin: 5px;
-        }
-        .links {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .link {
-            background: #333;
-            color: white;
-            padding: 10px 15px;
-            margin: 5px;
             text-decoration: none;
             border-radius: 5px;
-            display: inline-block;
-            width: 80%;
-            max-width: 300px;
+            font-size: 18px;
         }
-        .gmail { background: #fff; color: black; }
-        .coffee { background: yellow; color: black; }
-        .paypal { background: #0070ba; color: white; }
     </style>
 </head>
 <body>
-    <header>
-        <img src="banner.jpg" alt="Realm AI Banner" class="banner">
-    </header>
-    <section class="profile-section">
-        <img src="profile.jpg" alt="Realm AI Logo" class="profile-pic">
+    <img class="banner" src="banner.jpg" alt="Realm AI Banner">
+    <div class="container">
+        <img class="profile" src="profile.jpg" alt="Realm AI Logo">
         <h1>Realm AI</h1>
-    </section>
-    <section class="content">
-        <div class="youtube-box">
-            <h2>Realm AI</h2>
-            <button class="subscribe">Subscribe 2.1K</button>
-            <div class="videos">
-                <img src="video1.jpg" alt="Video Thumbnail">
-                <img src="video2.jpg" alt="Video Thumbnail">
-                <img src="video3.jpg" alt="Video Thumbnail">
-                <img src="video4.jpg" alt="Video Thumbnail">
-            </div>
-        </div>
-        <div class="links">
-            <a href="mailto:your-email@gmail.com" class="link gmail">Contact Me By Email</a>
-            <a href="https://www.buymeacoffee.com/realmAI" class="link coffee">Support Realm AI</a>
-            <a href="https://paypal.me/realmAI" class="link paypal">Support on PayPal</a>
-        </div>
-    </section>
+        <a class="button" href="https://www.youtube.com/@Realm-AI1/shorts" target="_blank">شاهد القناة على يوتيوب</a>
+        <a class="button" href="mailto:ahmedzz6f7@gmail.com">تواصل معي عبر الإيميل</a>
+        <a class="button" href="https://www.paypal.com/paypalme/jztejtjkz" target="_blank">ادعمني عبر PayPal</a>
+        <a class="button" href="https://www.buymeacoffee.com/realmai" target="_blank">ادعمني عبر Buy Me A Coffee</a>
+    </div>
 </body>
 </html>
