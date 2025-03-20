@@ -1,6 +1,6 @@
 const apiKey = 'AIzaSyAdK5VvGF-_Cer_C6xH6wZImJfgZFWYBMw';  // 🔹 استبدلها بمفتاح API الذي حصلت عليه
 const channelId = 'UC1H0oKY2Jplc41QDmmWRVDw';  // 🔹 استبدلها بـ ID قناتك
-const maxResults = 6;
+const maxResults = 8;
 const videoContainer = document.getElementById('video-container');
 
 async function fetchLatestVideos() {
