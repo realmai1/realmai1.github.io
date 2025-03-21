@@ -1,37 +1,46 @@
-// مفتاح API - تأكد من استبداله بمفتاح جديد عند الحاجة
-const API_KEY = 'AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8';  // 🔴 استبدلها بمفتاح API الخاص بك
-const CHANNEL_ID = 'UCxVnEXnM5SkYmG1cADxsbIQ'; // 🔴 ضع هنا الـ ID الخاص بقناتك
-const MAX_RESULTS = 4; // عدد الفيديوهات التي سيتم جلبها
+const apiKey = "AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8"; // استبدل بمفتاح YouTube API الخاص بك
+const channelId = "UCXvNExM5SKYmG1cADxsblQ"; // معرف قناتك على YouTube
 const videoContainer = document.getElementById("video-container");
 
-// 🔹 دالة لجلب أحدث الفيديوهات من القناة
-async function fetchLatestVideos() {
+async function fetchVideos() {
     try {
-        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`);
-        const data = await response.json();
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&type=video&order=date&maxResults=4`
+        );
 
-        // تنظيف الحاوية قبل إضافة الفيديوهات الجديدة
-        videoContainer.innerHTML = "";
-
-        if (data.items) {
-            data.items.forEach(item => {
-                if (item.id.videoId) {
-                    const videoFrame = document.createElement("iframe");
-                    videoFrame.classList.add("video");
-                    videoFrame.src = `https://www.youtube.com/embed/${item.id.videoId}`;
-                    videoFrame.allowFullscreen = true;
-                    videoContainer.appendChild(videoFrame);
-                }
-            });
-        } else {
-            videoContainer.innerHTML = "<p>⚠ There are no videos available at the moment..</p>";
+        if (!response.ok) {
+            throw new Error("فشل تحميل الفيديوهات");
         }
 
+        const data = await response.json();
+        displayVideos(data.items);
     } catch (error) {
-        console.error("خطأ في جلب الفيديوهات:", error);
-        videoContainer.innerHTML = "<p>❌ حدث خطأ أثناء تحميل الفيديوهات.</p>";
+        console.error("خطأ:", error);
+        videoContainer.innerHTML = `<p>⚠️ لا يمكن تحميل الفيديوهات حاليًا.</p>`;
     }
 }
 
-// 🔹 تحميل الفيديوهات عند فتح الصفحة
-document.addEventListener("DOMContentLoaded", fetchLatestVideos);
+function displayVideos(videos) {
+    videoContainer.innerHTML = ""; // تفريغ المحتوى القديم
+    videos.forEach(video => {
+        const videoId = video.id.videoId;
+        const videoTitle = video.snippet.title;
+        const thumbnail = video.snippet.thumbnails.medium.url;
+
+        const videoElement = `
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                    <img src="${thumbnail}" alt="${videoTitle}">
+                </a>
+                <p>${videoTitle}</p>
+            </div>
+        `;
+        videoContainer.innerHTML += videoElement;
+    });
+}
+
+// تحديث الفيديوهات تلقائيًا كل 10 دقائق
+setInterval(fetchVideos, 10 * 60 * 1000);
+
+// تحميل الفيديوهات عند فتح الصفحة
+document.addEventListener("DOMContentLoaded", fetchVideos);
