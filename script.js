@@ -1,46 +1,25 @@
-const apiKey = "AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8"; // استبدل بمفتاح YouTube API الخاص بك
-const channelId = "UCXvNExM5SKYmG1cADxsblQ"; // معرف قناتك على YouTube
-const videoContainer = document.getElementById("video-container");
+const apiKey = 'AIzaSyBjP5pnS5__GyooVZ84bDw3760dz83sPn8'; // مفتاح API (يُفضل تغييره لأمانك)
+const channelId = 'UCjxO8V4I9B2D7iPqTq3l7zA'; // معرف قناة Realm AI
+const videoContainer = document.querySelector('.video-container');
 
-async function fetchVideos() {
+async function fetchLatestVideos() {
     try {
-        const response = await fetch(
-            `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&type=video&order=date&maxResults=4`
-        );
-
-        if (!response.ok) {
-            throw new Error("فشل تحميل الفيديوهات");
-        }
-
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=4`);
         const data = await response.json();
-        displayVideos(data.items);
+
+        videoContainer.innerHTML = ''; // مسح المحتوى الحالي
+        data.items.forEach(item => {
+            if (item.id.videoId) {
+                const videoFrame = `
+                    <iframe class="video" src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen></iframe>
+                `;
+                videoContainer.innerHTML += videoFrame;
+            }
+        });
     } catch (error) {
-        console.error("خطأ:", error);
-        videoContainer.innerHTML = `<p>⚠️ لا يمكن تحميل الفيديوهات حاليًا.</p>`;
+        console.error('❌ حدث خطأ أثناء جلب الفيديوهات:', error);
     }
 }
 
-function displayVideos(videos) {
-    videoContainer.innerHTML = ""; // تفريغ المحتوى القديم
-    videos.forEach(video => {
-        const videoId = video.id.videoId;
-        const videoTitle = video.snippet.title;
-        const thumbnail = video.snippet.thumbnails.medium.url;
-
-        const videoElement = `
-            <div class="video">
-                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-                    <img src="${thumbnail}" alt="${videoTitle}">
-                </a>
-                <p>${videoTitle}</p>
-            </div>
-        `;
-        videoContainer.innerHTML += videoElement;
-    });
-}
-
-// تحديث الفيديوهات تلقائيًا كل 10 دقائق
-setInterval(fetchVideos, 10 * 60 * 1000);
-
 // تحميل الفيديوهات عند فتح الصفحة
-document.addEventListener("DOMContentLoaded", fetchVideos);
+fetchLatestVideos();
